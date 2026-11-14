@@ -6,13 +6,16 @@ module control_unit(instr, z, clk, increment, alu_opcode, R1, R2, R3, immFlag, i
     output reg [2:0] alu_opcode, R1, R2, R3;
     output reg signed [15:0] imm;
 
+    // Flag for program halt
+    reg isHalted = 0;
+
     wire [3:0] opcode;
     assign opcode = instr[15:12];
 
-    parameter [3:0] NOP = 4'b0000, ADD = 4'b0001, SUB = 4'b0010, LOAD = 4'b0011, LOADI = 4'b0100, AND = 4'b0101, OR = 4'b0110, HALT = 4'b0111;
+    parameter [3:0] NOP = 4'b0000, ADD = 4'b0001, SUB = 4'b0010, LOAD = 4'b0011, LOADI = 4'b0100, AND = 4'b0101, OR = 4'b0110, HALT = 4'b1111;
     parameter [2:0] alu_ADD = 3'b000, alu_SUB = 3'b001, alu_AND = 3'b010, alu_OR = 3'b011;
 
-    always (@posedge clk)
+    always @(posedge clk)
     begin
         case(opcode)
             HALT, NOP: 
@@ -83,8 +86,11 @@ module control_unit(instr, z, clk, increment, alu_opcode, R1, R2, R3, immFlag, i
         endcase
     
         if (opcode == HALT)
-            increment = 0;
-        else
-            increment = 1;
+        begin
+            increment <= 0;
+            isHalted <= 1;
+        end
+        else if (isHalted == 0)
+            increment <= 1;
     end
 endmodule

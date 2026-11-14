@@ -1,11 +1,11 @@
-module program_counter(enableI, enableL, L, reset, clk, C);
-    input enableI, enableL, reset, clk;
+module program_counter(enableI, enableL, L, resetn, clk, C);
+    input enableI, enableL, resetn, clk;
     input [7:0] L;
-    
+
     output reg [7:0] C;
 
-    always (@posedge clk)
-        if (reset == 0)
+    always @(posedge clk)
+        if (resetn == 0)
             C <= 0;
         else if (enableL == 1)
             C <= L;

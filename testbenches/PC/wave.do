@@ -1,0 +1,25 @@
+onerror {resume}
+quietly WaveActivateNextPane {} 0
+add wave -noupdate -label clk -radix binary /testbench/clk
+add wave -noupdate -label enableI -radix binary /testbench/enableI
+add wave -noupdate -label resetn -radix binary /testbench/resetn
+add wave -noupdate -divider PC
+add wave -noupdate -label C -radix decimal /testbench/PC/C
+TreeUpdate [SetDefaultTree]
+WaveRestoreCursors {{Cursor 1} {10000 ps} 0}
+quietly wave cursor active 1
+configure wave -namecolwidth 80
+configure wave -valuecolwidth 40
+configure wave -justifyvalue left
+configure wave -signalnamewidth 0
+configure wave -snapdistance 10
+configure wave -datasetprefix 0
+configure wave -rowmargin 4
+configure wave -childrowmargin 2
+configure wave -gridoffset 0
+configure wave -gridperiod 1
+configure wave -griddelta 40
+configure wave -timeline 0
+configure wave -timelineunits ns
+update
+WaveRestoreZoom {0 ps} {120 ns}
