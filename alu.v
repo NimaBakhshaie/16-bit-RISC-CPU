@@ -7,7 +7,7 @@ module alu(clk,alu_opcode,num1,num2,num3,z);
 
     parameter [2:0] ADD = 3'b000, SUB = 3'b001, AND = 3'b010, OR = 3'b011;
 
-    always @(posedge clk)
+    always @(posedge clk) 
     begin 
         case (alu_opcode)
             ADD: 
@@ -21,9 +21,6 @@ module alu(clk,alu_opcode,num1,num2,num3,z);
 
             OR: 
             num3 <= num1|num2; 
-
-            default:
-            num3 <= 16'b0;
         endcase
     end 
 endmodule 
