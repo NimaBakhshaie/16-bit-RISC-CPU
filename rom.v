@@ -1,4 +1,4 @@
-module rom_256x16(C,clk,instruction);
+module rom_16x16(C,clk,instrc);
     input [7:0]C;
     input clk;
     output reg[15:0] instrc; 
