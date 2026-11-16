@@ -1,5 +1,4 @@
 module alu(alu_opcode,num1,num2,num3,z);
-    input clk; 
     input [2:0]alu_opcode;
     input signed[15:0] num1,num2;
     output z;

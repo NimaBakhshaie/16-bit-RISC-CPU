@@ -7,15 +7,15 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/nimab/Documents/ece241/16-bit-CPU/16-bit-RISC-CPU/testbenches/TOP
+dC:/Users/nimab/Documents/ece241/16-bit-CPU/16-bit-RISC-CPU/testbenches/TOP
 valu
-Z1 !s110 1794789317
+Z0 !s110 1794866063
 !i10b 1
-!s100 QBC8T<C=bm1[^93Qz2L461
-IISJjZWWiNmji:EO1>?L5L0
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-R0
-w1794786590
+!s100 ZIPbg^@GPaGZj>=mQE;H=1
+I[XaaUcO06n3IGX;MMHC>F3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/intelFPGA_lite/18.1/16-bit-RISC-CPU/testbenches/TOP
+w1794862203
 8../../alu.v
 F../../alu.v
 L0 1
@@ -23,19 +23,19 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1794789317.000000
+Z4 !s108 1794866063.000000
 Z5 !s107 ../../top.v|../../rom.v|../../register.v|../../program_counter.v|../../control_unit.v|../../alu.v|
 Z6 !s90 -reportprogress|300|../../alu.v|../../control_unit.v|../../program_counter.v|../../register.v|../../rom.v|../../top.v|
 !i113 1
 Z7 tCvgOpt 0
 vcontrol_unit
-R1
-!i10b 1
-!s100 6c3aa80DELYYhFE:WZ?J60
-I7J_e<3l0a6O@cAj7=j0T70
-R2
 R0
-w1794787260
+!i10b 1
+!s100 6TLm@KfWBzBDhhYi3ezB22
+IP]?jB2md[42n^4ekRc`;f2
+R1
+R2
+w1794862255
 8../../control_unit.v
 F../../control_unit.v
 L0 1
@@ -49,13 +49,13 @@ R6
 !i113 1
 R7
 vprogram_counter
-R1
+R0
 !i10b 1
 !s100 m?TS>Kb`PPE`<hDmkCl[U0
 IEij2Y2]AIN?5Rl0>zCR_D0
+R1
 R2
-R0
-w1794786223
+w1794849774
 8../../program_counter.v
 F../../program_counter.v
 L0 1
@@ -69,13 +69,13 @@ R6
 !i113 1
 R7
 vreg_8x16
-R1
+R0
 !i10b 1
 !s100 Q:AFJUaSAzYzm^IFH;4_e3
 IkOm5LQBlPXOWQ89]ffLDR1
+R1
 R2
-R0
-w1794786706
+w1794858067
 8../../register.v
 F../../register.v
 L0 1
@@ -89,13 +89,13 @@ R6
 !i113 1
 R7
 vrom_16x16
-R1
-!i10b 1
-!s100 ]KK6BUVoE49PBak2Y8>G:2
-I2Vnk^>nVE0f1eA2_TN?T13
-R2
 R0
-w1794784314
+!i10b 1
+!s100 K>zz?IBGDnPNmMiUoX^W<0
+I>Iz@0njWYMdCZGTFhzb4N1
+R1
+R2
+w1794862057
 8../../rom.v
 F../../rom.v
 L0 1
@@ -109,13 +109,13 @@ R6
 !i113 1
 R7
 vtestbench
-R1
-!i10b 1
-!s100 dOT@abfSGSbaZW_eo8BD>1
-IdgbR5T?59jAoaXb;O9o1h0
-R2
 R0
-w1794789231
+!i10b 1
+!s100 eSK0R@G_z3Bh=clEKa>Vl0
+IkNAUVekzDQ]nkdQOJ=ii<1
+R1
+R2
+w1794865767
 8testbench.v
 Ftestbench.v
 L0 3
@@ -129,13 +129,13 @@ R4
 !i113 1
 R7
 vtop
-R1
-!i10b 1
-!s100 =>fF?Fj]D@NfH^DSGMImd0
-I]hUHM]NKLDk4SE;<Bic4j3
-R2
 R0
-w1794787130
+!i10b 1
+!s100 :VJa`ec;SRV]6J:cHSkT>3
+I`jk?VM<@AmCSS505o]`bL1
+R1
+R2
+w1794866057
 8../../top.v
 F../../top.v
 L0 1
