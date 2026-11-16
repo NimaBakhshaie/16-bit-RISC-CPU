@@ -4,7 +4,7 @@ module program_counter(enableI, enableL, L, resetn, clk, C);
 
     output reg [7:0] C;
 
-    always @(posedge clk)
+    always @(posedge clk or negedge resetn)
         if (resetn == 0)
             C <= 0;
         else if (enableL == 1)

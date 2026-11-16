@@ -4,9 +4,9 @@ add wave -noupdate -label clk -radix binary /testbench/clk
 add wave -noupdate -label instr -radix binary /testbench/instr
 add wave -noupdate -divider CU
 add wave -noupdate -label alu_opcode -radix binary /testbench/CU/alu_opcode
-add wave -noupdate -label R1 -radix binary /testbench/CU/R1
-add wave -noupdate -label R2 -radix binary /testbench/CU/R2
-add wave -noupdate -label R3 -radix binary /testbench/CU/R3
+add wave -noupdate -label R1 -radix binary /testbench/CU/R1_CU
+add wave -noupdate -label R2 -radix binary /testbench/CU/R2_CU
+add wave -noupdate -label R3 -radix binary /testbench/CU/R3_CU
 add wave -noupdate -label increment -radix binary /testbench/CU/increment
 add wave -noupdate -label immFlag -radix binary /testbench/CU/immFlag
 add wave -noupdate -label loadIFlag -radix binary /testbench/CU/loadIFlag

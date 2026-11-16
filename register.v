@@ -5,20 +5,8 @@ module reg_8x16 (R1,R2,R3,WR3,resetn,clk,DR1,DR2);
     output reg signed [15:0] DR1,DR2; 
 
     reg signed[15:0]r0,r1,r2,r3,r4,r5,r6,r7; 
-    always @(posedge clk)
-        begin 
-        if (resetn == 0) 
-            begin 
-            r0 <= 16'b0;
-            r1 <= 16'b0;
-            r2 <= 16'b0;
-            r3 <= 16'b0;
-            r4 <= 16'b0;
-            r5 <= 16'b0;
-            r6 <= 16'b0;
-            r7 <= 16'b0;
-            end 
-        else 
+    
+    always @(*)
         begin
             case(R1)
                 3'b000: DR1 <= r0;
@@ -41,7 +29,23 @@ module reg_8x16 (R1,R2,R3,WR3,resetn,clk,DR1,DR2);
                 3'b110: DR2 <= r6;
                 3'b111: DR2 <= r7;
             endcase 
-
+        end
+    
+    always @(posedge clk or negedge resetn)
+        begin 
+        if (resetn == 0) 
+            begin 
+            r0 <= 16'b0;
+            r1 <= 16'b0;
+            r2 <= 16'b0;
+            r3 <= 16'b0;
+            r4 <= 16'b0;
+            r5 <= 16'b0;
+            r6 <= 16'b0;
+            r7 <= 16'b0;
+            end 
+        else 
+        begin
             case (R3)
                 3'b000: r0 <= WR3; 
                 3'b001: r1 <= WR3; 
