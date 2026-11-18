@@ -4,7 +4,7 @@ module reg_8x16 (R1,R2,R3,WR3,resetn,clk,DR1,DR2,SW,display);
     input signed [15:0] WR3;
     input resetn,clk;
     output reg signed [15:0] DR1,DR2; 
-    output reg [15:0] display //Remove later
+    output reg [15:0] display; //Remove later
 
     reg signed[15:0]r0,r1,r2,r3,r4,r5,r6,r7; 
     
