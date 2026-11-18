@@ -1,4 +1,4 @@
-module hex_decoder(X, HEX);
+module hex_decoder(X, HEX); //Temporary for testing
 
     input [3:0] X;
     output [6:0] HEX;
