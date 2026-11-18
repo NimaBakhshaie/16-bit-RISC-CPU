@@ -1,13 +1,25 @@
-module reg_8x16 (R1,R2,R3,WR3,resetn,clk,DR1,DR2);
+module reg_8x16 (R1,R2,R3,WR3,resetn,clk,DR1,DR2,SW,display);
     input [2:0] R1,R2,R3; 
+    input [2:0] SW; //Remove later
     input signed [15:0] WR3;
     input resetn,clk;
     output reg signed [15:0] DR1,DR2; 
+    output reg [15:0] display //Remove later
 
     reg signed[15:0]r0,r1,r2,r3,r4,r5,r6,r7; 
     
     always @(*)
         begin
+            case (SW) //Remove later 
+                3'b000: display <= r0;
+                3'b001: display <= r1;
+                3'b010: display <= r2;
+                3'b011: display <= r3;
+                3'b100: display <= r4;
+                3'b101: display <= r5;
+                3'b110: display <= r6;
+                3'b111: display <= r7;
+            endcase
             case(R1)
                 3'b000: DR1 <= r0;
                 3'b001: DR1 <= r1;
