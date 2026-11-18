@@ -1,8 +1,4 @@
 onerror {resume}
-quietly WaveActivateNextPane {} 0
-add wave -noupdate -label writeClk -radix binary /testbench/writeClk
-add wave -noupdate -label writeIndex -radix decimal /testbench/writeIndex
-add wave -noupdate -label writeD -radix binary /testbench/writeD
 add wave -noupdate -divider Clock_and_Reset
 add wave -noupdate -label KEY -radix binary /testbench/KEY
 add wave -noupdate -divider CPU
@@ -10,9 +6,9 @@ add wave -noupdate -label C -radix decimal /testbench/CPU/C
 add wave -noupdate -label instruction -radix binary /testbench/CPU/instr
 add wave -noupdate -divider CU
 add wave -noupdate -label alu_opcode -radix binary /testbench/CPU/CU/alu_opcode
-add wave -noupdate -label R1 -radix decimal /testbench/CPU/CU/R1
-add wave -noupdate -label R2 -radix decimal /testbench/CPU/CU/R2
-add wave -noupdate -label R3 -radix decimal /testbench/CPU/CU/R3
+add wave -noupdate -label R1 -radix unsigned /testbench/CPU/CU/R1
+add wave -noupdate -label R2 -radix unsigned /testbench/CPU/CU/R2
+add wave -noupdate -label R3 -radix unsigned /testbench/CPU/CU/R3
 add wave -noupdate -label increment -radix binary /testbench/CPU/CU/increment
 add wave -noupdate -label immFlag -radix binary /testbench/CPU/CU/immFlag
 add wave -noupdate -label loadIFlag -radix binary /testbench/CPU/CU/loadIFlag

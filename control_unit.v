@@ -1,6 +1,6 @@
-module control_unit(instr, z, clk, increment, resetn, alu_opcode, R1, R2, R3, immFlag, imm, loadIFlag);
+module control_unit(instr, z, increment, resetn, alu_opcode, R1, R2, R3, immFlag, imm, loadIFlag);
     input [15:0] instr;
-    input z, clk, resetn;
+    input z, resetn;
 
     output reg increment, immFlag, loadIFlag;
     output reg [2:0] alu_opcode, R1, R2, R3;
