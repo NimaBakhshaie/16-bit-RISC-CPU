@@ -13,7 +13,7 @@ module top(KEY,SW,HEX3,HEX2,HEX1,HEX0);
     assign clk = ~KEY[0];
 
     program_counter PC (.enableI(increment), .resetn(KEY[1]), .clk(clk), .C(C));
-    rom_16x16 ROM (.C(C),.instrc(instr));
+    rom_16x16 ROM(.C(C),.instrc(instr));
     control_unit CU (.instr(instr), .increment(increment), .resetn(KEY[1]), .alu_opcode(alu_opcode), .R1(R1), .R2(R2), .R3(R3), .immFlag(immFlag), .imm(imm), .loadIFlag(loadIFlag));
     reg_8x16 REG_8X16 (.R1(R1), .R2(R2), .R3(R3), .WR3(WR3), .resetn(KEY[1]), .clk(clk), .DR1(DR1), .DR2(DR2), .SW(SW), .display(display)); //SW and Display can be removed later
     alu ALU (.alu_opcode(alu_opcode), .num1(num1), .num2(num2), .num3(WR3));

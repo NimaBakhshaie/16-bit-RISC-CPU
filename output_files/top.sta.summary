@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'KEY[0]'
+Slack : -12.987
+TNS   : -1543.648
+
+Type  : Slow 1100mV 85C Model Setup 'program_counter:PC|C[0]'
+Slack : -10.484
+TNS   : -69.948
+
+Type  : Slow 1100mV 85C Model Hold 'KEY[0]'
+Slack : -7.661
+TNS   : -736.351
+
+Type  : Slow 1100mV 85C Model Hold 'program_counter:PC|C[0]'
+Slack : 0.039
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.394
+TNS   : -84.694
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'program_counter:PC|C[0]'
+Slack : 0.319
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'KEY[0]'
+Slack : -12.553
+TNS   : -1491.376
+
+Type  : Slow 1100mV 0C Model Setup 'program_counter:PC|C[0]'
+Slack : -10.238
+TNS   : -68.567
+
+Type  : Slow 1100mV 0C Model Hold 'KEY[0]'
+Slack : -7.485
+TNS   : -722.787
+
+Type  : Slow 1100mV 0C Model Hold 'program_counter:PC|C[0]'
+Slack : -0.088
+TNS   : -0.088
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.394
+TNS   : -73.265
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'program_counter:PC|C[0]'
+Slack : 0.317
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'KEY[0]'
+Slack : -8.067
+TNS   : -971.725
+
+Type  : Fast 1100mV 85C Model Setup 'program_counter:PC|C[0]'
+Slack : -6.176
+TNS   : -40.595
+
+Type  : Fast 1100mV 85C Model Hold 'KEY[0]'
+Slack : -4.652
+TNS   : -444.025
+
+Type  : Fast 1100mV 85C Model Hold 'program_counter:PC|C[0]'
+Slack : 0.067
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.318
+TNS   : -41.705
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'program_counter:PC|C[0]'
+Slack : 0.232
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'KEY[0]'
+Slack : -7.021
+TNS   : -840.967
+
+Type  : Fast 1100mV 0C Model Setup 'program_counter:PC|C[0]'
+Slack : -5.830
+TNS   : -38.551
+
+Type  : Fast 1100mV 0C Model Hold 'KEY[0]'
+Slack : -4.527
+TNS   : -445.800
+
+Type  : Fast 1100mV 0C Model Hold 'program_counter:PC|C[0]'
+Slack : 0.076
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.317
+TNS   : -41.206
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'program_counter:PC|C[0]'
+Slack : 0.290
+TNS   : 0.000
+
+------------------------------------------------------------

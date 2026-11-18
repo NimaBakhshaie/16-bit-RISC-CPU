@@ -1,0 +1,3 @@
+Info (10281): Verilog HDL Declaration information at register.v(2): object "R1" differs only in case from object "r1" in the same scope File: C:/intelFPGA_lite/18.1/16-bit-RISC-CPU/register.v Line: 2
+Info (10281): Verilog HDL Declaration information at register.v(2): object "R2" differs only in case from object "r2" in the same scope File: C:/intelFPGA_lite/18.1/16-bit-RISC-CPU/register.v Line: 2
+Info (10281): Verilog HDL Declaration information at register.v(2): object "R3" differs only in case from object "r3" in the same scope File: C:/intelFPGA_lite/18.1/16-bit-RISC-CPU/register.v Line: 2
