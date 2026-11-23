@@ -9,13 +9,13 @@ z2
 cModel Technology
 Z0 dC:/Users/nimab/Documents/ece241/16-bit-CPU/16-bit-RISC-CPU/testbenches/CU
 vcontrol_unit
-Z1 !s110 1794687233
+Z1 !s110 1795020552
 !i10b 1
-!s100 ]95WNfglCS19_SYTSgI8O0
-IDh2GKDPlm@=^YDlbB@2ZA2
+!s100 nX82OI7_o35>GT29^IB;H2
+I<<;5@fBLD<U4Vg8`iX3=c1
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1794687229
+w1794787252
 8../control_unit.v
 F../control_unit.v
 L0 1
@@ -23,7 +23,7 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1794687233.000000
+Z4 !s108 1795020552.000000
 !s107 ../control_unit.v|
 !s90 -reportprogress|300|../control_unit.v|
 !i113 1
