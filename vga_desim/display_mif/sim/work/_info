@@ -9,21 +9,21 @@ z2
 cModel Technology
 Z0 dC:/Users/nimab/Documents/ece241/16-bit-CPU/16-bit-RISC-CPU/vga_desim/display_mif/sim
 vinstr_reg_disp
-Z1 !s110 1795477556
+Z1 !s110 1795543868
 !i10b 1
-!s100 @GgzG_064THblFK1Ta2Nd2
-I]HAemWNR=N4D]gk8nl_l33
+!s100 :kiNbJP@G69_@:_:ILMaU2
+IWFch]?S;BZNW2eQ8D]e>a0
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-Z3 w1795477554
+Z3 w1795543867
 Z4 8../vga_demo.v
 Z5 F../vga_demo.v
-L0 174
+L0 234
 Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1795477556.000000
+Z7 !s108 1795543868.000000
 Z8 !s107 ../vga_adapter/vga_controller.v|../vga_adapter/vga_address_translator.v|../vga_adapter/vga_adapter.v|../vga_demo.v|../top.v|
 Z9 !s90 ../top.v|../vga_demo.v|../vga_adapter/vga_adapter.v|../vga_adapter/vga_address_translator.v|../vga_adapter/vga_controller.v|
 !i113 1
@@ -31,14 +31,14 @@ Z10 tCvgOpt 0
 vop_disp
 R1
 !i10b 1
-!s100 L407cXP4U>XBSOa94M31n1
-I;>OAHdA9EC6>eKQCC_9L72
+!s100 QjNIjTcWT@P5Jc4ToDLm`2
+Ii;0BGa9QID?T43jAn6:z_2
 R2
 R0
 R3
 R4
 R5
-L0 76
+L0 136
 R6
 r1
 !s85 0
@@ -51,14 +51,14 @@ R10
 vop_mem
 R1
 !i10b 1
-!s100 4Fz[R36doe5`KL2hm8RnT0
-IAH@l^a>8IhB`mRA?Tf2Mz2
+!s100 :h56^meh1]]V34hTfdl2Z1
+I6=aUBaW>GAc6N`1M8=>LY0
 R2
 R0
 R3
 R4
 R5
-L0 271
+L0 331
 R6
 r1
 !s85 0
@@ -71,14 +71,14 @@ R10
 vreg_label_mem
 R1
 !i10b 1
-!s100 4iN7iO2[Dm_<NHc?c>VgE3
-IF=AiC?X7;8cJ?024Uk5@_1
+!s100 D`ERLA>SY9^LK^6EJnaLX2
+IHD19n@djCB7JeA>N?IKNo3
 R2
 R0
 R3
 R4
 R5
-L0 290
+L0 350
 R6
 r1
 !s85 0
@@ -111,11 +111,11 @@ R10
 vtop_desim
 R1
 !i10b 1
-!s100 ID40`U3zd6G_[JS5Oa?4H1
-ISn[Z1S:c@I_iR^m4lAKJA2
+!s100 <o;84P?ZRcn::kHDX:edn0
+I3Scz1UL@cOSQdFRcl1;OU1
 R2
 R0
-w1795470202
+w1795543579
 8../top.v
 F../top.v
 L0 1
@@ -231,8 +231,8 @@ R10
 vvga_module_desim
 R1
 !i10b 1
-!s100 MZd5^:VlAa[A04hXa?iVj0
-IzUnjIAoW8R07:7fYZOlab2
+!s100 M4>XlgCD@EN;9@W5i;=jg2
+I;C@KFciPADT4:S_875oNM2
 R2
 R0
 R3

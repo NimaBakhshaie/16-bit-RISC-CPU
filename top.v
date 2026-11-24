@@ -33,7 +33,7 @@ module top(CLOCK_50,KEY,SW,HEX3,HEX2,HEX1,HEX0,VGA_R, VGA_G, VGA_B, VGA_HS, VGA_
     hex_decoder h2(.X(display[11:8]),.HEX(HEX2));
     hex_decoder h3(.X(display[15:12]),.HEX(HEX3));
 
-    vga_module(CLOCK_50, SW, KEY, VGA_R, VGA_G, VGA_B,
+    vga_module(CLOCK_50, instr, KEY, VGA_R, VGA_G, VGA_B,
 				VGA_HS, VGA_VS, VGA_BLANK_N, VGA_SYNC_N, VGA_CLK);
 
     //MUX
