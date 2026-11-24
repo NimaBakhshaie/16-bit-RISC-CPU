@@ -1,0 +1,12 @@
+
+State Machine - |top|vga_module:comb_4|instr_reg_disp:IRD|y_Q
+Name y_Q.DONE y_Q.WRITE y_Q.INIT 
+y_Q.INIT 0 0 0 
+y_Q.WRITE 0 1 1 
+y_Q.DONE 1 0 1 
+
+State Machine - |top|vga_module:comb_4|op_disp:OPD|y_Q
+Name y_Q.DONE y_Q.WRITE y_Q.INIT 
+y_Q.INIT 0 0 0 
+y_Q.WRITE 0 1 1 
+y_Q.DONE 1 0 1 

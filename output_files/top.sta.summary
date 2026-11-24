@@ -1,0 +1,389 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'KEY[0]'
+Slack : -8.178
+TNS   : -1018.809
+
+Type  : Slow 1100mV 85C Model Setup 'program_counter:PC|C[0]'
+Slack : -6.414
+TNS   : -42.082
+
+Type  : Slow 1100mV 85C Model Setup 'vga_module:comb_4|instr_reg_disp:IRD|y_Q.DONE'
+Slack : -4.592
+TNS   : -13.709
+
+Type  : Slow 1100mV 85C Model Setup 'vga_module:comb_4|op_disp:OPD|y_Q.DONE'
+Slack : -4.280
+TNS   : -12.269
+
+Type  : Slow 1100mV 85C Model Setup 'vga_module:comb_4|instr_reg_disp:IRD|yC[5]'
+Slack : -4.274
+TNS   : -4.274
+
+Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -3.417
+TNS   : -581.820
+
+Type  : Slow 1100mV 85C Model Setup 'comb_4|VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 31.156
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'KEY[0]'
+Slack : -0.190
+TNS   : -0.190
+
+Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
+Slack : 0.359
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'comb_4|VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.360
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'vga_module:comb_4|instr_reg_disp:IRD|y_Q.DONE'
+Slack : 0.669
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'program_counter:PC|C[0]'
+Slack : 0.702
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'vga_module:comb_4|instr_reg_disp:IRD|yC[5]'
+Slack : 3.027
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'vga_module:comb_4|op_disp:OPD|y_Q.DONE'
+Slack : 3.146
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'comb_4|VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : -2.241
+TNS   : -49.171
+
+Type  : Slow 1100mV 85C Model Removal 'comb_4|VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.011
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.394
+TNS   : -76.794
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'program_counter:PC|C[0]'
+Slack : 0.228
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'vga_module:comb_4|instr_reg_disp:IRD|yC[5]'
+Slack : 0.379
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'vga_module:comb_4|instr_reg_disp:IRD|y_Q.DONE'
+Slack : 0.383
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'vga_module:comb_4|op_disp:OPD|y_Q.DONE'
+Slack : 0.387
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'comb_4|VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.666
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 8.871
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'comb_4|VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 18.766
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'KEY[0]'
+Slack : -7.933
+TNS   : -993.028
+
+Type  : Slow 1100mV 0C Model Setup 'program_counter:PC|C[0]'
+Slack : -6.469
+TNS   : -42.093
+
+Type  : Slow 1100mV 0C Model Setup 'vga_module:comb_4|instr_reg_disp:IRD|y_Q.DONE'
+Slack : -4.692
+TNS   : -13.922
+
+Type  : Slow 1100mV 0C Model Setup 'vga_module:comb_4|instr_reg_disp:IRD|yC[5]'
+Slack : -4.384
+TNS   : -4.384
+
+Type  : Slow 1100mV 0C Model Setup 'vga_module:comb_4|op_disp:OPD|y_Q.DONE'
+Slack : -4.335
+TNS   : -12.415
+
+Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -3.120
+TNS   : -494.907
+
+Type  : Slow 1100mV 0C Model Setup 'comb_4|VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 31.412
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'KEY[0]'
+Slack : -0.253
+TNS   : -0.253
+
+Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.322
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'comb_4|VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.344
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'vga_module:comb_4|instr_reg_disp:IRD|y_Q.DONE'
+Slack : 0.643
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'program_counter:PC|C[0]'
+Slack : 0.650
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'vga_module:comb_4|instr_reg_disp:IRD|yC[5]'
+Slack : 3.083
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'vga_module:comb_4|op_disp:OPD|y_Q.DONE'
+Slack : 3.123
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'comb_4|VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : -2.209
+TNS   : -48.454
+
+Type  : Slow 1100mV 0C Model Removal 'comb_4|VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.112
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.394
+TNS   : -88.162
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'program_counter:PC|C[0]'
+Slack : 0.278
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'vga_module:comb_4|instr_reg_disp:IRD|yC[5]'
+Slack : 0.336
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'vga_module:comb_4|op_disp:OPD|y_Q.DONE'
+Slack : 0.361
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'vga_module:comb_4|instr_reg_disp:IRD|y_Q.DONE'
+Slack : 0.366
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'comb_4|VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.666
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 8.826
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'comb_4|VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 18.746
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'KEY[0]'
+Slack : -4.872
+TNS   : -599.799
+
+Type  : Fast 1100mV 85C Model Setup 'program_counter:PC|C[0]'
+Slack : -3.568
+TNS   : -23.839
+
+Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -2.466
+TNS   : -380.500
+
+Type  : Fast 1100mV 85C Model Setup 'vga_module:comb_4|instr_reg_disp:IRD|y_Q.DONE'
+Slack : -2.110
+TNS   : -6.225
+
+Type  : Fast 1100mV 85C Model Setup 'vga_module:comb_4|instr_reg_disp:IRD|yC[5]'
+Slack : -2.060
+TNS   : -2.060
+
+Type  : Fast 1100mV 85C Model Setup 'vga_module:comb_4|op_disp:OPD|y_Q.DONE'
+Slack : -1.915
+TNS   : -5.455
+
+Type  : Fast 1100mV 85C Model Setup 'comb_4|VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 34.113
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'KEY[0]'
+Slack : -0.396
+TNS   : -0.987
+
+Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
+Slack : 0.176
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'comb_4|VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.212
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'vga_module:comb_4|instr_reg_disp:IRD|y_Q.DONE'
+Slack : 0.353
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'program_counter:PC|C[0]'
+Slack : 0.437
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'vga_module:comb_4|op_disp:OPD|y_Q.DONE'
+Slack : 1.746
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'vga_module:comb_4|instr_reg_disp:IRD|yC[5]'
+Slack : 1.798
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'comb_4|VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : -1.353
+TNS   : -29.723
+
+Type  : Fast 1100mV 85C Model Removal 'comb_4|VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.007
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.051
+TNS   : -5.842
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'program_counter:PC|C[0]'
+Slack : 0.243
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'vga_module:comb_4|instr_reg_disp:IRD|yC[5]'
+Slack : 0.354
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'vga_module:comb_4|op_disp:OPD|y_Q.DONE'
+Slack : 0.441
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'vga_module:comb_4|instr_reg_disp:IRD|y_Q.DONE'
+Slack : 0.463
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'comb_4|VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.666
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 8.806
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'comb_4|VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 18.883
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'KEY[0]'
+Slack : -4.193
+TNS   : -519.238
+
+Type  : Fast 1100mV 0C Model Setup 'program_counter:PC|C[0]'
+Slack : -3.403
+TNS   : -22.679
+
+Type  : Fast 1100mV 0C Model Setup 'vga_module:comb_4|instr_reg_disp:IRD|yC[5]'
+Slack : -2.011
+TNS   : -2.011
+
+Type  : Fast 1100mV 0C Model Setup 'vga_module:comb_4|instr_reg_disp:IRD|y_Q.DONE'
+Slack : -1.984
+TNS   : -5.892
+
+Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -1.911
+TNS   : -279.372
+
+Type  : Fast 1100mV 0C Model Setup 'vga_module:comb_4|op_disp:OPD|y_Q.DONE'
+Slack : -1.817
+TNS   : -5.172
+
+Type  : Fast 1100mV 0C Model Setup 'comb_4|VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 34.785
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'KEY[0]'
+Slack : -0.529
+TNS   : -1.618
+
+Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.168
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'comb_4|VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.192
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'vga_module:comb_4|instr_reg_disp:IRD|y_Q.DONE'
+Slack : 0.320
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'program_counter:PC|C[0]'
+Slack : 0.382
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'vga_module:comb_4|op_disp:OPD|y_Q.DONE'
+Slack : 1.682
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'vga_module:comb_4|instr_reg_disp:IRD|yC[5]'
+Slack : 1.806
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'comb_4|VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : -1.340
+TNS   : -29.451
+
+Type  : Fast 1100mV 0C Model Removal 'comb_4|VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.022
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.076
+TNS   : -8.955
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'program_counter:PC|C[0]'
+Slack : 0.291
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'vga_module:comb_4|instr_reg_disp:IRD|yC[5]'
+Slack : 0.379
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'vga_module:comb_4|op_disp:OPD|y_Q.DONE'
+Slack : 0.431
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'vga_module:comb_4|instr_reg_disp:IRD|y_Q.DONE'
+Slack : 0.457
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'comb_4|VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.666
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 8.800
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'comb_4|VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 18.884
+TNS   : 0.000
+
+------------------------------------------------------------

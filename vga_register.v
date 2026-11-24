@@ -17,7 +17,7 @@ module register_display(clk, reset, en,vga_write, register, vga_x, vga_y,color, 
     wire r;           
 
     // Combined hexadecimal sprite ROM
-    reg [2:0] memory [0:16383]; /* synthesis ram_init_file = rom.mif */;
+    reg [2:0] memory [0:16383] /* synthesis ram_init_file = rom.mif */;
 
     parameter [8:0] column_x_one = 9'd139,column_x_two = 9'd418,column_y = 9'd86;
     parameter [5:0] increment_x = 6'd42,increment_y = 6'd48;
