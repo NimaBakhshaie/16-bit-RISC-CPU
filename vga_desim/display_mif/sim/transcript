@@ -1,5 +1,5 @@
 # vsim -pli "C:\Users\nimab\Documents\ece241\DESim\modelsim.vpi" -Lf 220model -Lf altera_mf_ver -Lf verilog -t 1ns -c -do "run -all" tb 
-# Start time: 18:45:58 on Nov 23,2026
+# Start time: 08:55:36 on Nov 25,2026
 # Loading work.tb
 # Loading work.top_desim
 # Loading work.vga_module_desim
@@ -16,16 +16,29 @@
 # Loading altera_mf_ver.altsyncram_body
 # Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
 # Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ../vga_demo.v(99): [PCDPC] - Port size (14) does not match connection size (32) for port 'count'. The port definition is at: ../vga_demo.v(271).
+# ** Warning: (vsim-3015) ../tb/tb.v(46): [PCDPC] - Port size (6) does not match connection size (4) for port 'KEY'. The port definition is at: ../top.v(1).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/DUT File: ../top.v
+# ** Warning: (vsim-3015) ../vga_demo.v(163): [PCDPC] - Port size (14) does not match connection size (32) for port 'count'. The port definition is at: ../vga_demo.v(335).
 #    Time: 0 ns  Iteration: 0  Instance: /tb/DUT/U1/OPD/mem File: ../vga_demo.v
-# ** Warning: (vsim-3017) ../vga_demo.v(49): [TFMPC] - Too few port connections. Expected 11, found 10.
-#    Time: 0 ns  Iteration: 0  Instance: /tb/DUT/U1/IRD File: ../vga_demo.v
-# ** Warning: (vsim-3722) ../vga_demo.v(49): [TFMPC] - Missing connection for port 'done'.
-# ** Warning: (vsim-3015) ../vga_demo.v(197): [PCDPC] - Port size (14) does not match connection size (32) for port 'count'. The port definition is at: ../vga_demo.v(290).
-#    Time: 0 ns  Iteration: 0  Instance: /tb/DUT/U1/IRD/mem File: ../vga_demo.v
+# ** Warning: (vsim-3015) ../vga_demo.v(261): [PCDPC] - Port size (14) does not match connection size (32) for port 'count'. The port definition is at: ../vga_demo.v(355).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/DUT/U1/IRD1/mem File: ../vga_demo.v
+# ** Warning: (vsim-3015) ../vga_demo.v(261): [PCDPC] - Port size (14) does not match connection size (32) for port 'count'. The port definition is at: ../vga_demo.v(355).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/DUT/U1/IRD2/mem File: ../vga_demo.v
+# ** Warning: (vsim-3017) ../vga_demo.v(83): [TFMPC] - Too few port connections. Expected 12, found 11.
+#    Time: 0 ns  Iteration: 0  Instance: /tb/DUT/U1/IRD3 File: ../vga_demo.v
+# ** Warning: (vsim-3722) ../vga_demo.v(83): [TFMPC] - Missing connection for port 'done'.
+# ** Warning: (vsim-3015) ../vga_demo.v(261): [PCDPC] - Port size (14) does not match connection size (32) for port 'count'. The port definition is at: ../vga_demo.v(355).
+#    Time: 0 ns  Iteration: 0  Instance: /tb/DUT/U1/IRD3/mem File: ../vga_demo.v
 # Loading C:\Users\nimab\Documents\ece241\DESim\modelsim.vpi
 # run -all
 # Time scaling: 0.0001 sim seconds per real-time second
 # 
 # 
 # Connected to server!
+# GUI has closed the connection
+# ** Note: $finish    : /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_mf.v(48976)
+#    Time: 4178145 us  Iteration: 1  Instance: /tb
+# 
+# Quitting...
+# End time: 09:46:38 on Nov 25,2026, Elapsed time: 0:51:02
+# Errors: 0, Warnings: 7

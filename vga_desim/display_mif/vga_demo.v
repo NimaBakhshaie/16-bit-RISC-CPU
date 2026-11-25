@@ -23,9 +23,13 @@ module vga_module_desim(CLOCK_50, SW, KEY, VGA_X, VGA_Y, VGA_COLOR, plot);
     // specify the number of bits needed for a Y (row) pixel coordinate on the VGA display
     parameter nY = 9;
 
+    parameter [3:0] NOP = 4'b0000, ADD = 4'b0001, SUB = 4'b0010, LOAD = 4'b0011, LOADI = 4'b0100, AND = 4'b0101, OR = 4'b0110, HALT = 4'b1111;
+
 	input wire CLOCK_50;
     input wire [9:0] SW;
-	input wire [0:0] KEY;
+    wire [15:0] instr;
+    assign instr = {SW[3:0], SW[6:4], SW[9:7], 6'b100000};
+	input wire [1:0] KEY;
 	output wire [nX-1:0] VGA_X;          // for DESim VGA
 	output wire [nY-1:0] VGA_Y;          // for DESim VGA
 	output wire [23:0] VGA_COLOR;        // for DESim VGA
@@ -36,26 +40,86 @@ module vga_module_desim(CLOCK_50, SW, KEY, VGA_X, VGA_Y, VGA_COLOR, plot);
      * this example only reads the contents of the video memory and displays it. Since this 
      * example does not write to individual pixels except when reading from the video memory, 
      * the signals below are used only as placeholders. */
-	wire [COLOR_DEPTH-1:0] colorO, colorR, MUX_color;        // used as placeholder
-    wire [nX-1:0] XO, XR, MUX_x;                     // used as placeholder
-    wire [nY-1:0] YO, YR, MUX_y;                     // used as placeholder
-    wire writeO, writeR, MUX_write;                          // used as placeholder
+	wire [COLOR_DEPTH-1:0] colorO, colorR1, colorR2, colorR3;        // used as placeholder
+    wire [nX-1:0] XO, XR1, XR2, XR3;                     // used as placeholder
+    wire [nY-1:0] YO, YR1, YR2, YR3;                     // used as placeholder
+    wire writeO, writeR1, writeR2, writeR3;                          // used as placeholder
+    reg [COLOR_DEPTH-1:0] MUX_color;
+    reg [nX-1:0] MUX_x;
+    reg [nY-1:0] MUX_y;
+    reg MUX_write;
+    
     
     wire VGA_SYNC;  // used to indicate that the video-memory has been read and displayed
 
-    wire op_disp_done;
+    wire op_disp_done, IRD1_done, IRD2_done;
+    reg blank1, blank2, blank3;
 
-    op_disp OPD (.x(10'd312), .y(9'd329), .opcode(SW[3:0]), .resetn(KEY[0]), .clk(CLOCK_50), .VGA_X(XO), .VGA_Y(YO), .VGA_COLOR(colorO), .VGA_WRITE(writeO), .ready(VGA_SYNC), .done(op_disp_done));
-    instr_reg_disp IRD (.x(10'd391), .y(9'd329), .address(SW[6:4]), .resetn(KEY[0]), .clk(CLOCK_50), .VGA_X(XR), .VGA_Y(YR), .VGA_COLOR(colorR), .VGA_WRITE(writeR), .ready(op_disp_done));
+    always @(*)
+    begin
+        case(instr[15:12])
+            NOP, HALT:
+            begin
+                blank1 <= 1; blank2 <= 1; blank3 <= 1;
+            end
+            ADD, SUB, AND, OR:
+            begin
+                blank1 <= 0; blank2 <= 0; blank3 <= 0;
+            end
+            LOAD:
+            begin
+                blank1 <= 0; blank2 <= 0; blank3 <= 1;
+            end
+            LOADI:
+            begin
+                blank1 <= 0; blank2 <= 1; blank3 <= 1;
+            end
+        endcase
+    end
 
-    assign MUX_x = op_disp_done ? XR : XO;
-    assign MUX_y = op_disp_done ? YR : YO;
-    assign MUX_write = op_disp_done ? writeR : writeO;
-    assign MUX_color = op_disp_done ? colorR: colorO;
+    op_disp OPD (.x(10'd312), .y(9'd329), .opcode(instr[15:12]), .resetn(KEY[0]), .clk(CLOCK_50), .VGA_X(XO), .VGA_Y(YO), .VGA_COLOR(colorO), .VGA_WRITE(writeO), .ready(VGA_SYNC), .done(op_disp_done));
+    instr_reg_disp IRD1 (.x(10'd391), .y(9'd329), .address(instr[11:9]), .resetn(KEY[0]), .clk(CLOCK_50), .VGA_X(XR1), .VGA_Y(YR1), .VGA_COLOR(colorR1), .VGA_WRITE(writeR1), .blank(blank1), .ready(op_disp_done), .done(IRD1_done));
+    instr_reg_disp IRD2 (.x(10'd470), .y(9'd329), .address(instr[8:6]), .resetn(KEY[0]), .clk(CLOCK_50), .VGA_X(XR2), .VGA_Y(YR2), .VGA_COLOR(colorR2), .VGA_WRITE(writeR2), .blank(blank2), .ready(IRD1_done), .done(IRD2_done));
+    instr_reg_disp IRD3 (.x(10'd549), .y(9'd329), .address(instr[5:3]), .resetn(KEY[0]), .clk(CLOCK_50), .VGA_X(XR3), .VGA_Y(YR3), .VGA_COLOR(colorR3), .VGA_WRITE(writeR3), .blank(blank3), .ready(IRD2_done));
+
+
+    always @(*)
+    begin
+        if (IRD2_done)
+        begin
+            MUX_x <= XR3;
+            MUX_y <= YR3;
+            MUX_color <= colorR3;
+            MUX_write <= writeR3;
+        end
+        else if (IRD1_done)
+        begin
+            MUX_x <= XR2;
+            MUX_y <= YR2;
+            MUX_color <= colorR2;
+            MUX_write <= writeR2;
+        end
+        else if (op_disp_done)
+        begin
+            MUX_x <= XR1;
+            MUX_y <= YR1;
+            MUX_color <= colorR1;
+            MUX_write <= writeR1;
+        end
+        else
+        begin
+            MUX_x <= XO;
+            MUX_y <= YO;
+            MUX_color <= colorO;
+            MUX_write <= writeO;
+        end
+
+    end
+
     // instantiate the DESim VGA adapter
     `define VGA_MEMORY              // include a memory module in the VGA adapter
     vga_adapter VGA (
-        .resetn(KEY[0]),
+        .resetn(KEY[1]),
         .clock(CLOCK_50),
         .color(MUX_color),              // used to draw pixels on top of background
         .x(MUX_x),                      // used to draw pixels on top of background
@@ -171,11 +235,11 @@ module op_disp (x, y, opcode, resetn, clk, VGA_X, VGA_Y, VGA_COLOR, VGA_WRITE, r
          
 endmodule
 
-module instr_reg_disp (x, y, address, resetn, clk, VGA_X, VGA_Y, VGA_COLOR, VGA_WRITE, ready, done);
+module instr_reg_disp (x, y, address, resetn, clk, VGA_X, VGA_Y, VGA_COLOR, VGA_WRITE, blank, ready, done);
     input wire [9:0] x;
     input wire [8:0] y;
     input wire [2:0] address;
-    input wire resetn, clk, ready;
+    input wire resetn, clk, blank, ready;
 
     output reg [9:0] VGA_X;
     output reg [8:0] VGA_Y;
@@ -263,7 +327,7 @@ module instr_reg_disp (x, y, address, resetn, clk, VGA_X, VGA_Y, VGA_COLOR, VGA_
             
             VGA_X <= x + xC;
             VGA_Y <= y + yC;
-            VGA_COLOR <= colour;
+            VGA_COLOR <= blank ? 3'b111 : colour;
         end
     end
 endmodule
@@ -280,7 +344,8 @@ module op_mem (count, opcode, data_out);
     
     initial 
     begin
-        $readmemh("../CPU_Instruction_Labels_Combined.hex", mem);
+        //$readmemh("../CPU_Instruction_Labels_Combined.hex", mem); //For DESim
+        $readmemh("CPU_Instruction_Labels_Combined.hex", mem); //For ModelSim
     end
 
     assign data_out = mem[index * 2048 + count];
@@ -296,7 +361,8 @@ module reg_label_mem (count, reg_address, data_out);
     
     initial 
     begin
-        $readmemh("../CPU_Register_Labels_R0_to_R7_Combined.hex", mem);
+        //$readmemh("../CPU_Register_Labels_R0_to_R7_Combined.hex", mem); //For DESim
+        $readmemh("CPU_Register_Labels_R0_to_R7_Combined.hex", mem); //For ModelSim
     end
 
     assign data_out = mem[reg_address * 2048 + count];

@@ -1,0 +1,250 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/nimab/Documents/ece241/16-bit-CPU/16-bit-RISC-CPU/vga_desim/display_mif/sim
+vinstr_reg_disp
+Z1 !s110 1795477556
+!i10b 1
+!s100 @GgzG_064THblFK1Ta2Nd2
+I]HAemWNR=N4D]gk8nl_l33
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1795477554
+Z4 8../vga_demo.v
+Z5 F../vga_demo.v
+L0 174
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1795477556.000000
+Z8 !s107 ../vga_adapter/vga_controller.v|../vga_adapter/vga_address_translator.v|../vga_adapter/vga_adapter.v|../vga_demo.v|../top.v|
+Z9 !s90 ../top.v|../vga_demo.v|../vga_adapter/vga_adapter.v|../vga_adapter/vga_address_translator.v|../vga_adapter/vga_controller.v|
+!i113 1
+Z10 tCvgOpt 0
+vop_disp
+R1
+!i10b 1
+!s100 L407cXP4U>XBSOa94M31n1
+I;>OAHdA9EC6>eKQCC_9L72
+R2
+R0
+R3
+R4
+R5
+L0 76
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vop_mem
+R1
+!i10b 1
+!s100 4Fz[R36doe5`KL2hm8RnT0
+IAH@l^a>8IhB`mRA?Tf2Mz2
+R2
+R0
+R3
+R4
+R5
+L0 271
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vreg_label_mem
+R1
+!i10b 1
+!s100 4iN7iO2[Dm_<NHc?c>VgE3
+IF=AiC?X7;8cJ?024Uk5@_1
+R2
+R0
+R3
+R4
+R5
+L0 290
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vtb
+R1
+!i10b 1
+!s100 =za8b@bDD^:Nk1CMFSIa60
+I@Yk`mHCfhBR^WZfQ=_<1H3
+R2
+R0
+w1795461222
+8../tb/tb.v
+F../tb/tb.v
+L0 6
+R6
+r1
+!s85 0
+31
+R7
+!s107 ../tb/tb.v|
+!s90 ../tb/tb.v|
+!i113 1
+R10
+vtop_desim
+R1
+!i10b 1
+!s100 ID40`U3zd6G_[JS5Oa?4H1
+ISn[Z1S:c@I_iR^m4lAKJA2
+R2
+R0
+w1795470202
+8../top.v
+F../top.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vvga_adapter
+R1
+!i10b 1
+!s100 V^:0bTh:CPVbobAXI[EZf0
+IWIz^cb<19KE1>eSC9>3D11
+R2
+R0
+Z11 w1795403645
+Z12 8../vga_adapter/vga_adapter.v
+Z13 F../vga_adapter/vga_adapter.v
+Z14 L0 13
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vvga_address_translator
+R1
+!i10b 1
+!s100 gmKI:@CM4Ife2NfF^7R^h1
+IQf6bgg416;`z;57fofQV23
+R2
+R0
+R11
+8../vga_adapter/vga_address_translator.v
+F../vga_adapter/vga_address_translator.v
+L0 4
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vvga_controller
+R1
+!i10b 1
+!s100 X:Za8N9JkhcSgC_ATF02k3
+IjhYa6S9;BCQ0R>55aGh7N3
+R2
+R0
+R11
+8../vga_adapter/vga_controller.v
+F../vga_adapter/vga_controller.v
+L0 5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vvga_convert
+R1
+!i10b 1
+!s100 hLc3@^Q;mQ;6iH?BjUBaX1
+I5FKT<Y<ScFXYS_hd;@<QG2
+R2
+R0
+R11
+R12
+R13
+L0 170
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vvga_ff
+R1
+!i10b 1
+!s100 m>FL9dCYekTo;WhYd]i@A1
+IR]T]CWYeeRn;489g^`m:h3
+R2
+R0
+R11
+R12
+R13
+L0 154
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vvga_module_desim
+R1
+!i10b 1
+!s100 MZd5^:VlAa[A04hXa?iVj0
+IzUnjIAoW8R07:7fYZOlab2
+R2
+R0
+R3
+R4
+R5
+R14
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
