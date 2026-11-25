@@ -1,4 +1,4 @@
-module register_display(clk, reset, en,vga_write, register, vga_x, vga_y,color, register_index);
+module register_display(clk, reset, en, d, vga_write, register, vga_x, vga_y,color, register_index);
     input clk, reset, en;
     input [15:0] register;
 
@@ -7,6 +7,7 @@ module register_display(clk, reset, en,vga_write, register, vga_x, vga_y,color, 
     output [2:0] register_index;
     output reg [2:0] color;   
     output reg vga_write;   
+    output d; 
 
     reg [1:0] x, y;
     reg column;   
@@ -21,7 +22,7 @@ module register_display(clk, reset, en,vga_write, register, vga_x, vga_y,color, 
 
     parameter [8:0] column_x_one = 9'd139,column_x_two = 9'd418,column_y = 9'd86;
     parameter [5:0] increment_x = 6'd42,increment_y = 6'd48;
-    parameter [1:0] IDLE = 2'b00,DRAW = 2'b01, NEXT = 2'b10;
+    parameter [1:0] IDLE = 2'b00,DRAW = 2'b01, NEXT = 2'b10, DONE = 2'b11;
 
     // FSM
     reg [1:0] states, next_states;
@@ -38,10 +39,11 @@ module register_display(clk, reset, en,vga_write, register, vga_x, vga_y,color, 
             end
             NEXT: begin
                 if (column == 1 && y == 3 && x == 3)
-                    next_states = IDLE;
+                    next_states = DONE;
                 else
                     next_states = DRAW;
             end
+            DONE: next_states = IDLE;
             default: next_states = IDLE;
         endcase
     end
@@ -92,6 +94,7 @@ module register_display(clk, reset, en,vga_write, register, vga_x, vga_y,color, 
     sprite_write sw (clk,r,done,pixel_address,current_x,current_y);
     sprite_select ss (x,register,current); 
     assign register_index = {column, y};
+    assign d = (states == DONE); 
 
     //Output handling for outputs going into the adapter
     always @(posedge clk) begin
