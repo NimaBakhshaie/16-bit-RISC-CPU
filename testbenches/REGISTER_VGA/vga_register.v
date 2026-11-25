@@ -17,7 +17,7 @@ module register_display(clk, reset, en,vga_write, register, vga_x, vga_y,color, 
     wire r;           
 
     // Combined hexadecimal sprite ROM
-    reg [2:0] memory [0:16383]; /* synthesis ram_init_file = rom.mif */;
+    reg [2:0] memory [0:16383] /* synthesis ram_init_file = rom.mif */;
 
     parameter [8:0] column_x_one = 9'd139,column_x_two = 9'd418,column_y = 9'd86;
     parameter [5:0] increment_x = 6'd42,increment_y = 6'd48;
@@ -37,7 +37,7 @@ module register_display(clk, reset, en,vga_write, register, vga_x, vga_y,color, 
                     next_states = NEXT;
             end
             NEXT: begin
-                if (column == 1 && y == 2 && x == 2)
+                if (column == 1 && y == 3 && x == 3)
                     next_states = IDLE;
                 else
                     next_states = DRAW;
@@ -71,12 +71,12 @@ module register_display(clk, reset, en,vga_write, register, vga_x, vga_y,color, 
 
         else if (states == NEXT) begin //Increments once per clock cycle based on state for x,y,column
             if (!(column == 1 && y == 3 && x == 3)) begin
-                if (x < 2) begin
+                if (x < 3) begin
                     x <= x + 1;
                 end
                 else begin
                     x <= 0;
-                    if (y < 2) begin
+                    if (y < 3) begin
                         y <= y + 1;
                     end
                     else begin
@@ -117,8 +117,6 @@ module sprite_select(x,register,current);
     output reg[3:0]current; 
 
     wire [3:0] a,b,c,d; 
-
-    assign address = {y,x};
     assign a = register[15:12];
     assign b = register[11:8];
     assign c = register[7:4];
@@ -142,15 +140,18 @@ module sprite_write(clk,reset,done,pixel_address,current_x,current_y);
     output reg [9:0] pixel_address; 
 
     always @(posedge clk) begin
-        if (reset == 0) begin
+        if (reset == 1) begin
             pixel_address <= 0;
             done <= 0;
         end
         else if (!done) begin
-            if (pixel_address == 1023) begin
+            if (pixel_address == 1) begin //Modelsim test only 
                 done <= 1;
             end
-            else pixel_address <= pixel_address + 1;
+            else begin
+                pixel_address <= pixel_address + 1;
+                done <= 0;
+            end 
         end
     end
 
