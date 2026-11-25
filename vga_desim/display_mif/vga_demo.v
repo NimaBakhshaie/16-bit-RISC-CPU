@@ -26,9 +26,9 @@ module vga_module_desim(CLOCK_50, SW, KEY, VGA_X, VGA_Y, VGA_COLOR, plot);
     parameter [3:0] NOP = 4'b0000, ADD = 4'b0001, SUB = 4'b0010, LOAD = 4'b0011, LOADI = 4'b0100, AND = 4'b0101, OR = 4'b0110, HALT = 4'b1111;
 
 	input wire CLOCK_50;
-    input wire [5:0] SW;
+    input wire [9:0] SW;
     wire [15:0] instr;
-    assign instr = {SW, 10'b0010100000};
+    assign instr = {SW[3:0], SW[6:4], SW[9:7], 6'b100000};
 	input wire [1:0] KEY;
 	output wire [nX-1:0] VGA_X;          // for DESim VGA
 	output wire [nY-1:0] VGA_Y;          // for DESim VGA
@@ -44,7 +44,11 @@ module vga_module_desim(CLOCK_50, SW, KEY, VGA_X, VGA_Y, VGA_COLOR, plot);
     wire [nX-1:0] XO, XR1, XR2, XR3;                     // used as placeholder
     wire [nY-1:0] YO, YR1, YR2, YR3;                     // used as placeholder
     wire writeO, writeR1, writeR2, writeR3;                          // used as placeholder
-    reg MUX_color, MUX_x, MUX_y, MUX_write;
+    reg [COLOR_DEPTH-1:0] MUX_color;
+    reg [nX-1:0] MUX_x;
+    reg [nY-1:0] MUX_y;
+    reg MUX_write;
+    
     
     wire VGA_SYNC;  // used to indicate that the video-memory has been read and displayed
 
@@ -58,17 +62,17 @@ module vga_module_desim(CLOCK_50, SW, KEY, VGA_X, VGA_Y, VGA_COLOR, plot);
             begin
                 blank1 <= 1; blank2 <= 1; blank3 <= 1;
             end
-            ADD, SUB, LOAD, AND, OR:
+            ADD, SUB, AND, OR:
             begin
                 blank1 <= 0; blank2 <= 0; blank3 <= 0;
             end
             LOAD:
             begin
-                blank1 <= 1; blank2 <= 0; blank3 <= 0;
+                blank1 <= 0; blank2 <= 0; blank3 <= 1;
             end
             LOADI:
             begin
-                blank1 <= 1; blank2 <= 1; blank3 <= 0;
+                blank1 <= 0; blank2 <= 1; blank3 <= 1;
             end
         endcase
     end
@@ -340,7 +344,8 @@ module op_mem (count, opcode, data_out);
     
     initial 
     begin
-        $readmemh("../CPU_Instruction_Labels_Combined.hex", mem);
+        //$readmemh("../CPU_Instruction_Labels_Combined.hex", mem); //For DESim
+        $readmemh("CPU_Instruction_Labels_Combined.hex", mem); //For ModelSim
     end
 
     assign data_out = mem[index * 2048 + count];
@@ -356,7 +361,8 @@ module reg_label_mem (count, reg_address, data_out);
     
     initial 
     begin
-        $readmemh("../CPU_Register_Labels_R0_to_R7_Combined.hex", mem);
+        //$readmemh("../CPU_Register_Labels_R0_to_R7_Combined.hex", mem); //For DESim
+        $readmemh("CPU_Register_Labels_R0_to_R7_Combined.hex", mem); //For ModelSim
     end
 
     assign data_out = mem[reg_address * 2048 + count];
