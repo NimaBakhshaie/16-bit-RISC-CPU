@@ -1,31 +1,50 @@
-module top(KEY,SW,HEX3,HEX2,HEX1,HEX0);
-    input [1:0] KEY;
-    input [2:0] SW; //For testing only
-    output [6:0]HEX3, HEX2,HEX1,HEX0; //For testing only
-
-
-    wire increment, immFlag, loadIFlag, clk;
+module top (KEY,CLOCK_50,VGA_R,VGA_G,VGA_B,VGA_HS,VGA_VS,VGA_BLANK_N,VGA_SYNC_N,VGA_CLK);
+	 input CLOCK_50;
+     input [1:0] KEY;
+	 output [7:0]VGA_R,VGA_G,VGA_B;
+	 output VGA_HS,VGA_VS;
+	 output VGA_BLANK_N, VGA_SYNC_N,VGA_CLK; 
+	 
+    wire increment, immFlag, loadIFlag;
+    wire cpu_clk = ~KEY[0]; 
     wire [2:0] alu_opcode, R1, R2, R3;
     wire [7:0] C;
     wire [15:0] instr, imm, DR1, DR2, WR3, num1, num2;
-    wire [15:0] display; //For testing only
+    wire [15:0] display;
+    wire [2:0] register_index, color;
+    wire [9:0] vga_x; 
+    wire [8:0] vga_y; 
+    wire vga_write;
 
-    assign clk = ~KEY[0];
+    program_counter PC (
+        .enableI(increment), .enableL(1'b0), .L(8'd0), 
+        .resetn(KEY[1]), .clk(cpu_clk), .C(C)
+    );
+    rom_16x16 ROM (.C(C), .instrc(instr));
+    control_unit CU (
+        .instr(instr), .z(1'b0),
+        .increment(increment), .resetn(KEY[1]),
+        .alu_opcode(alu_opcode), .R1(R1), .R2(R2), .R3(R3),
+        .immFlag(immFlag), .imm(imm), .loadIFlag(loadIFlag)
+    );
+    reg_8x16 REG_8X16 (
+        .R1(R1), .R2(R2), .R3(R3), .WR3(WR3),
+        .resetn(KEY[1]), .clk(cpu_clk),
+        .DR1(DR1), .DR2(DR2), .SW(register_index), .display(display)
+    );
+    alu ALU (.alu_opcode(alu_opcode), .num1(num1), .num2(num2), .num3(WR3), .z());
 
-    program_counter PC (.enableI(increment), .resetn(KEY[1]), .clk(clk), .C(C));
-    rom_16x16 ROM (.C(C),.instrc(instr));
-    control_unit CU (.instr(instr), .increment(increment), .resetn(KEY[1]), .alu_opcode(alu_opcode), .R1(R1), .R2(R2), .R3(R3), .immFlag(immFlag), .imm(imm), .loadIFlag(loadIFlag));
-    reg_8x16 REG_8X16 (.R1(R1), .R2(R2), .R3(R3), .WR3(WR3), .resetn(KEY[1]), .clk(clk), .DR1(DR1), .DR2(DR2), .SW(SW), .display(display)); //SW and Display can be removed later
-    alu ALU (.alu_opcode(alu_opcode), .num1(num1), .num2(num2), .num3(WR3));
+    register_display REG (
+        .clk(CLOCK_50), .reset(KEY[1]), .en(1'b1),
+        .vga_write(vga_write), .register(display),
+        .vga_x(vga_x), .vga_y(vga_y), .color(color),
+        .register_index(register_index)
+    );
 
-    //Temporary register display
-    hex_decoder h0(.X(display[3:0]),.HEX(HEX0));
-    hex_decoder h1(.X(display[7:4]),.HEX(HEX1));
-    hex_decoder h2(.X(display[11:8]),.HEX(HEX2));
-    hex_decoder h3(.X(display[15:12]),.HEX(HEX3));
+    vga_adapter #(.RESOLUTION("640x480"), .COLOR_DEPTH(3)) VGA (KEY[1], CLOCK_50, color, vga_x, 
+        vga_y, vga_write,VGA_R, VGA_G, VGA_B, VGA_HS, VGA_VS, VGA_BLANK_N, VGA_SYNC_N, VGA_CLK
+    );
 
-    //MUX
     assign num1 = immFlag ? imm : DR1;
     assign num2 = loadIFlag ? 16'b0 : DR2;
 endmodule
-
